@@ -56,21 +56,26 @@ Contains sales transaction data.
 | `sales_amount` | INT      | Sales amount for the line item/product in the order |
 | `quantity`     | TINYINT  | Quantity of the product sold in the line item       |
 
+
 Key Business Problems & SQL Solutions
+This section highlights a selection of the most impactful SQL queries in this repository, 
+showcasing diverse analytical challenges and the SQL techniques used to solve them, categorized by their primary business focus.
 
-This section highlights a selection of the most impactful SQL queries in this repository, showcasing diverse analytical challenges and the SQL techniques used to solve them.
+Customer Behavior & Segmentation
 
-1. Customer Loyalty Tier Migration Analysis
+These queries focus on understanding customer actions, grouping them into valuable segments, and analyzing their purchasing habits over their lifecycle.
+
+1. Customer Loyalty Tier Migration Analysis 
 
 Business Question: How do customers move between loyalty tiers based on their annual spend?
 
 Insight: Identified customers who upgraded or downgraded loyalty tiers year-over-year, crucial for informing targeted marketing and retention strategies.
 
-SQL Skills: CTE, LAG(), CASE WHEN, Window Functions (PARTITION BY, ORDER BY), DATE_FORMAT(), YEAR(), SUM(), GROUP BY.
+SQL Skills: CTE, LAG(), CASE WHEN, Window Functions, DATE_FORMAT(), YEAR(), SUM(), GROUP BY.
 
 Code: sql_queries/customer_analysis/Q27_Customer_Loyalty_Tier_Migration.sql
 
-2. Average Order Value by Product Category over Customer Lifespan Quartiles
+2. Average Order Value by Product Category over Customer Lifespan Quartiles 
 
 Business Question: Do customer purchasing behaviors in specific product categories vary based on their tenure with the company?
 
@@ -80,57 +85,7 @@ SQL Skills: CTE, NTILE(), DATEDIFF(), MAX(), MIN(), SUM(), AVG(), GROUP BY, JOIN
 
 Code: sql_queries/customer_analysis/Q30_Avg_Order_Value_Lifespan_Quartiles.sql
 
-3. Product Co-Purchasing (Market Basket Analysis)
-
-Business Question: Which products are most frequently purchased together in the same order?
-
-Insight: Identified the top 10 pairs of products commonly bought in the same transaction, directly informing cross-selling strategies, product bundling, and merchandising layouts.
-
-SQL Skills: CTE, Self-JOIN on a fact table, COUNT(*), GROUP BY, WHERE (for unique pair ordering), ORDER BY, LIMIT.
-
-Code: sql_queries/product_analysis/Product_Co_Purchasing_Market_Basket_Analysis.sql
-
-4. Products with Sales Decrease from Previous Quarter
-
-Business Question: Product management needs to quickly spot products experiencing a decline in sales.
-
-Insight: Identified products where the total sales amount in a quarter was lower than the immediately preceding quarter, enabling proactive inventory adjustments and targeted marketing interventions.
-
-SQL Skills: CTE, LAG(), QUARTER(), YEAR(), SUM(), GROUP BY, Window Functions, WHERE, CASE WHEN (for handling growth/decline categories).
-
-Code: sql_queries/product_analysis/Q24_Products_Sales_Decrease_Prev_Quarter.sql
-
-5. Identifying Top 5 Product Categories by Growth in Latest Quarter
-
-Business Question: The executive team is looking for high-growth areas within the product portfolio.
-
-Insight: Identified the top 5 product categories with the highest sales growth percentage from the second-to-last quarter to the latest full quarter, guiding strategic investment decisions.
-
-SQL Skills: CTE, LAG(), ROW_NUMBER(), SUM(), GROUP BY, Window Functions, CASE WHEN (for division-by-zero handling), ORDER BY, LIMIT.
-
-Code: sql_queries/product_analysis/Q26_Top_5_Product_Categories_Growth.sql
-
-6. Products with Sales Spikes
-
-Business Question: The supply chain team needs to identify products with unusually high sales on a specific day compared to their average daily sales.
-
-Insight: Found products and order dates where daily sales were more than 3 times their overall average daily sales, crucial for demand forecasting and inventory anomaly detection.
-
-SQL Skills: Subquery, AVG(), SUM(), GROUP BY, JOIN, WHERE (for thresholding).
-
-Code: sql_queries/product_analysis/Q28_Products_With_Sales_Spikes.sql
-
-7. Employee Performance Ranking (Sales Rep Stand-in)
-
-Business Question: Sales management wants to rank sales representatives by their total sales each month and compare their rank to the total sales of their country.
-
-Insight: Provided detailed monthly performance rankings for sales representatives, both individually and relative to their regional performance, aiding in performance evaluation and goal setting.
-
-SQL Skills: CTE, RANK(), SUM() OVER, PARTITION BY, ORDER BY, JOIN, DATE_FORMAT().
-
-Code: sql_queries/sales_performance/Q29_Employee_Performance_Ranking.sql
-
-8. Average Time Between Orders for Each Customer
+3. Average Time Between Orders for Each Customer
 
 Business Question: Customer experience wants to understand typical repurchase intervals.
 
@@ -140,17 +95,7 @@ SQL Skills: CTE, LAG(), DATEDIFF(), AVG(), Window Functions, GROUP BY, JOIN.
 
 Code: sql_queries/customer_analysis/Q25_Avg_Time_Between_Orders.sql
 
-9. Cumulative Sales by Product Category Over Time
-
-Business Question: Finance needs to monitor the cumulative sales performance of each product category throughout the year.
-
-Insight: Provided a running total of sales for each product category month-over-month, essential for tracking progress against targets and financial forecasting.
-
-SQL Skills: CTE, SUM() OVER, DATE_FORMAT(), GROUP BY, PARTITION BY, ORDER BY.
-
-Code: sql_queries/sales_reporting/Q23_Cumulative_Sales_By_Category.sql
-
-10. Customers with Above-Average Order Count in Their Country
+4. Customers with Above-Average Order Count in Their Country 
 
 Business Question: Marketing wants to identify highly engaged customers who are outliers within their own geographic region.
 
@@ -159,6 +104,74 @@ Insight: Found customers whose total number of orders exceeded the average order
 SQL Skills: Subquery, JOIN, COUNT(DISTINCT), AVG(), GROUP BY, HAVING.
 
 Code: sql_queries/customer_analysis/Q22_Customers_Above_Avg_Orders.sql
+
+Product Performance & Strategy
+
+These queries analyze individual product performance, identify relationships between products, and support strategic decisions related to product development, merchandising, and sales force effectiveness.
+
+5. Product Co-Purchasing (Market Basket Analysis)
+
+Business Question: Which products are most frequently purchased together in the same order?
+
+Insight: Identified the top 10 pairs of products commonly bought in the same transaction, directly informing cross-selling strategies, product bundling, and merchandising layouts.
+
+SQL Skills: CTE, Self-JOIN on a fact table, COUNT(*), GROUP BY, WHERE (for unique pair ordering), ORDER BY, LIMIT.
+
+Code: sql_queries/product_analysis/Product_Co_Purchasing_Market_Basket_Analysis.sql
+
+6. Products with Sales Spikes 
+
+Business Question: The supply chain team needs to identify products with unusually high sales on a specific day compared to their average daily sales.
+
+Insight: Found products and order dates where daily sales were more than 3 times their overall average daily sales, crucial for demand forecasting and inventory anomaly detection.
+
+SQL Skills: Subquery, AVG(), SUM(), GROUP BY, JOIN, WHERE (for thresholding).
+
+Code: sql_queries/product_analysis/Q28_Products_With_Sales_Spikes.sql
+
+7. Employee Performance Ranking (Sales Rep Stand-in) 
+
+Business Question: Sales management wants to rank sales representatives by their total sales each month and compare their rank to the total sales of their country.
+
+Insight: Provided detailed monthly performance rankings for sales representatives, both individually and relative to their regional performance, aiding in performance evaluation and goal setting impacting product sales strategy.
+
+SQL Skills: CTE, RANK(), SUM() OVER, PARTITION BY, ORDER BY, JOIN, DATE_FORMAT().
+
+Code: sql_queries/sales_performance/Q29_Employee_Performance_Ranking.sql
+
+Time-Series Analysis
+
+These queries focus on analyzing data over time, identifying trends, calculating growth rates, and monitoring cumulative performance.
+
+8. Products with Sales Decrease from Previous Quarter 
+
+Business Question: Product management wants to quickly spot products experiencing a decline in sales.
+
+Insight: Identified products where the total sales amount in a quarter was lower than the immediately preceding quarter, enabling proactive inventory adjustments and targeted marketing interventions.
+
+SQL Skills: CTE, LAG(), QUARTER(), YEAR(), SUM(), GROUP BY, Window Functions, WHERE, CASE WHEN.
+
+Code: sql_queries/product_analysis/Q24_Products_Sales_Decrease_Prev_Quarter.sql
+
+9. Identifying Top 5 Product Categories by Growth in Latest Quarter 
+
+Business Question: The executive team is looking for high-growth areas within the product portfolio.
+
+Insight: Identified the top 5 product categories with the highest sales growth percentage from the second-to-last quarter to the latest full quarter, guiding strategic investment decisions.
+
+SQL Skills: CTE, LAG(), ROW_NUMBER(), SUM(), GROUP BY, Window Functions, CASE WHEN (for division-by-zero handling), ORDER BY, LIMIT.
+
+Code: sql_queries/product_analysis/Q26_Top_5_Product_Categories_Growth.sql
+
+10. Cumulative Sales by Product Category Over Time
+
+Business Question: Finance needs to monitor the cumulative sales performance of each product category throughout the year.
+
+Insight: Provided a running total of sales for each product category month-over-month, essential for tracking progress against targets and financial forecasting.
+
+SQL Skills: CTE, SUM() OVER, DATE_FORMAT(), GROUP BY, PARTITION BY, ORDER BY.
+
+Code: sql_queries/sales_reporting/Q23_Cumulative_Sales_By_Category.sql
 
 How To Use
 

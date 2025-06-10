@@ -166,7 +166,7 @@ To explore these SQL solutions:
 
 Clone the Repository:
 
-git clone https://https://github.com/amitha05jones/Data_Analysis_SQL_Skills.git
+git clone https://github.com/amitha05jones/Data_Analysis_SQL_Skills.git
 
 Navigate to the sql_queries Directory: The .sql files are organized within subfolders based on their analytical domain. You will need to create these subfolders (customer_analysis, product_analysis, sales_performance, sales_reporting) in your local repository and place the corresponding .sql files into them.
 

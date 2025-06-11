@@ -171,6 +171,76 @@ SQL Skills: CTE, SUM() OVER, DATE_FORMAT(), GROUP BY, PARTITION BY, ORDER BY.
 
 Code: [`sql_queries/sales_reporting/Cumulative_Sales_By_Category.sql`](./sql_queries/sales_reporting/Cumulative_Sales_By_Category.sql)
 
+Full Query List (For Comprehensive Review)
+
+This section provides a complete listing of all 30+ analytical SQL queries in this repository, organized by their primary business analysis area. Each link directs to the corresponding SQL file for detailed review.
+
+Customer Segmentation & Lifetime Value
+
+Customer Lifetime Value (CLTV) Calculation
+
+Customer Churn Prediction Factors
+
+RFM Segmentation Analysis
+
+Average Time Between Orders for Each Customer
+
+Avg Order Value by Product Category over Customer Lifespan Quartiles
+
+Top 10 Customers by Spend per Country
+
+Customer Acquisition Cost (CAC) by Channel (Hypothetical)
+
+Customer Cohort Analysis - First Purchase to Repeat Purchase
+
+Customers with High Returns Rate
+
+Customer Segmentation by Product Preference
+
+Customer Loyalty Tier Migration Analysis
+
+Cross-Channel Customer Behavior (Hypothetical)
+
+Product Performance & Strategy
+
+Product Co-Purchasing (Market Basket Analysis)
+
+Product Profitability by Category
+
+Inventory Turnover Rate by Product
+
+Top Selling Products by Region
+
+Products with Sales Decrease from Previous Quarter
+
+Products with Sales Spikes
+
+Identifying Top 5 Product Categories by Growth in Latest Quarter
+
+Sales Trend & Forecasting
+
+Cumulative Sales by Product Category Over Time
+
+Monthly Sales Growth Rate
+
+Average Sales Cycle Length
+
+Sales Performance by Weekday/Time of Day
+
+Employee Performance Ranking
+
+Quarter-over-Quarter Sales Comparison
+
+Sales Funnel Conversion Rates (Hypothetical Stages)
+
+Geographic & Demographic Analysis
+
+Customers with Above-Average Order Count in Their Country
+
+Top 5 Countries by Total Sales
+
+Customer Demographics by Product Category Preference
+
 How To Use
 To explore these SQL solutions:
 

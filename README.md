@@ -73,7 +73,7 @@ SQL Skills: CTE, JOIN, CONCAT(), TIMESTAMPDIFF(), CURDATE(), COUNT(DISTINCT), SU
 
 Code: [Comprehensive Customer Overview & Segmentation Report](./sql_queries/customer_analysis/Customer_Report.sql)
 
-Customer Loyalty Segmentation by Tenure and Spend
+2. Customer Loyalty Segmentation by Tenure and Spend
 
 Business Question: Marketing leadership wants to understand the structure of our customer base by categorizing customers into loyalty segments based on their tenure (duration since first order) and total lifetime spending.
 
@@ -83,7 +83,7 @@ SQL Skills: CTE, JOIN, MIN(), MAX(), SUM(), TIMESTAMPDIFF(), CASE WHEN, GROUP BY
 
 Code: [Customer Loyalty Segmentation by Tenure and Spend](./sql_queries/customer_analysis/Customer_Loyalty_Segmentation_by_Tenure_Spend.sql)
 
-Customer Loyalty Tier Migration Analysis
+3. Customer Loyalty Tier Migration Analysis
 
 Business Question: How do customers move between loyalty tiers based on their annual spend?
 
@@ -93,7 +93,7 @@ SQL Skills: CTE, LAG(), CASE WHEN, Window Functions, DATE_FORMAT(), YEAR(), SUM(
 
 Code: [`sql_queries/customer_analysis/Customer_Loyalty_Tier_Migration.sql`](./sql_queries/customer_analysis/Customer_Loyalty_Tier_Migration.sql)
 
-Average Order Value by Product Category over Customer Lifespan Quartiles
+4. Average Order Value by Product Category over Customer Lifespan Quartiles
 
 Business Question: Do customer purchasing behaviors in specific product categories vary based on their tenure with the company?
 
@@ -103,7 +103,7 @@ SQL Skills: CTE, NTILE(), DATEDIFF(), MAX(), MIN(), SUM(), AVG(), GROUP BY, JOIN
 
 Code: [`sql_queries/customer_analysis/Avg_Order_Value_Lifespan_Quartiles.sql`](./sql_queries/customer_analysis/Avg_Order_Value_Lifespan_Quartiles.sql)
 
-Average Time Between Orders for Each Customer
+5. Average Time Between Orders for Each Customer
 
 Business Question: Customer experience wants to understand typical repurchase intervals.
 
@@ -113,7 +113,7 @@ SQL Skills: JOIN, LAG(), DATEDIFF(), AVG(), Window Functions (PARTITION BY, ORDE
 
 Code: [`sql_queries/customer_analysis/Avg_Time_Between_Orders.sql`](./sql_queries/customer_analysis/Avg_Time_Between_Orders.sql)
 
-Order History with Previous Order Date for Same Customer
+6. Order History with Previous Order Date for Same Customer
 
 Business Question: Customer service wants to see a customer's order history and quickly identify the date of their previous order.
 
@@ -127,7 +127,7 @@ Code: [Order History with Previous Order Date for Same Customer](./sql_queries/c
 
 These queries analyze individual product performance, identify relationships between products, and support strategic decisions related to product development, merchandising, and sales force effectiveness.
 
-Comprehensive Product Performance & Segmentation Report
+1. Comprehensive Product Performance & Segmentation Report
 
 Business Question: How can we consolidate key product metrics and segment our product portfolio for strategic insights?
 
@@ -137,7 +137,7 @@ SQL Skills: CTE, JOIN, TIMESTAMPDIFF(), MAX(), COUNT(DISTINCT), SUM(), ROUND(), 
 
 Code: [Comprehensive Product Performance & Segmentation Report](./sql_queries/product_analysis/Product_Report.sql)
 
-Product Annual vs. Average & YoY Sales Performance
+2. Product Annual vs. Average & YoY Sales Performance
 
 Business Question: Product management needs a comprehensive view of individual product performance trends.
 
@@ -147,7 +147,7 @@ SQL Skills: CTE, YEAR(), SUM(), GROUP BY, AVG() (Window Function), LAG() (Window
 
 Code:[Product Annual vs. Average & YoY Sales Performance](./sql_queries/product_analysis/ProductPerfTrends_Annual_vs_Average_YoY_Growth.sql)
 
-Product Co-Purchasing (Market Basket Analysis)
+3. Product Co-Purchasing (Market Basket Analysis)
 
 Business Question: Which products are most frequently purchased together in the same order?
 
@@ -157,7 +157,7 @@ SQL Skills: CTE, Self-JOIN on a fact table, COUNT(*), GROUP BY, WHERE (for uniqu
 
 Code: [Product Co-Purchasing (Market Basket Analysis)](./sql_queries/product_analysis/Product_Co_Purchasing_Market_Basket_Analysis.sql)
 
-Products with Sales Spikes
+4. Products with Sales Spikes
 
 Business Question: The supply chain team needs to identify products with unusually high sales on a specific day compared to their average daily sales.
 
@@ -167,7 +167,7 @@ SQL Skills: Subquery, AVG(), SUM(), GROUP BY, JOIN, HAVING.
 
 Code: [Products with Sales Spikes](./sql_queries/product_analysis/Products_With_Sales_Spikes.sql)
 
-Products with Sales Decrease from Previous Quarter
+5. Products with Sales Decrease from Previous Quarter
 
 Business Question: Product management wants to quickly spot products experiencing a decline.
 
@@ -177,7 +177,7 @@ SQL Skills: CTE, DATE_FORMAT(), QUARTER(), YEAR(), SUM(), GROUP BY, LAG(), Windo
 
 Code: [Products with Sales Decrease from Previous Quarter](./sql_queries/product_analysis/Products_Sales_Decrease_Prev_Quarter.sql)
 
-Identifying Top 5 Product Categories by Growth in Latest Quarter
+6. Identifying Top 5 Product Categories by Growth in Latest Quarter
 
 Business Question: The executive team is looking for high-growth areas.
 
@@ -191,7 +191,7 @@ Code: [Identifying Top 5 Product Categories by Growth in Latest Quarter](./sql_q
 
 These queries focus on analyzing sales data over time, identifying trends, calculating growth rates, and monitoring cumulative and individual performance.
 
-Employee Performance Ranking (Hypothetical Sales Rep Stand-in)
+1. Employee Performance Ranking (Hypothetical Sales Rep Stand-in)
 
 Business Question: Sales management wants to rank sales representatives by their total sales amount each month and also see their rank compared to the total sales of their country for that month.
 
@@ -201,7 +201,7 @@ SQL Skills: CTE, DATE_FORMAT(), SUM(), GROUP BY, Window Functions (RANK(), SUM()
 
 Code:  [Employee Performance Ranking (Hypothetical Sales Rep Stand-in)](./sql_queries/sales_performance/Employee_Performance_Ranking.sql)
 
-Cumulative Sales by Product Category Over Time
+2. Cumulative Sales by Product Category Over Time
 
 Business Question: Finance needs to monitor the cumulative sales performance of each product category throughout the year.
 
@@ -211,7 +211,7 @@ SQL Skills: Window Functions (SUM() OVER), DATE_FORMAT(), GROUP BY, PARTITION BY
 
 Code: [Cumulative Sales by Product Category Over Time](./sql_queries/sales_reporting/Cumulative_Sales_By_Category.sql)
 
-Monthly Sales Trends
+3. Monthly Sales Trends
 
 Business Question: The sales director needs to visualize sales performance over time.
 
@@ -225,7 +225,7 @@ Code: [Monthly Sales Trends](./sql_queries/sales_reporting/Monthly_Sales_Trends.
 
 These queries analyze customer and sales data based on location and demographic attributes, providing insights into market understanding and targeting.
 
-Customers with Above-Average Order Count in Their Country
+1. Customers with Above-Average Order Count in Their Country
 
 Business Question: Marketing wants to identify highly engaged customers who are outliers within their own geographic region.
 
@@ -235,7 +235,7 @@ SQL Skills: Subquery, JOIN, COUNT(DISTINCT), AVG(), GROUP BY, HAVING.
 
 Code: [Customers with Above-Average Order Count in Their Country](./sql_queries/customer_analysis/Customers_Above_Avg_Orders.sql)
 
-Customer Demographic Insights
+2. Customer Demographic Insights
 
 Business Question: The marketing team wants to understand our customer base distribution.
 

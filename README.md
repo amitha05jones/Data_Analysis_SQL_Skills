@@ -91,7 +91,7 @@ Insight: Identified customers who upgraded or downgraded loyalty tiers year-over
 
 SQL Skills: CTE, LAG(), CASE WHEN, Window Functions, DATE_FORMAT(), YEAR(), SUM(), GROUP BY.
 
-Code: [`sql_queries/customer_analysis/Customer_Loyalty_Tier_Migration.sql`](./sql_queries/customer_analysis/Customer_Loyalty_Tier_Migration.sql)
+Code: [Customer_Loyalty_Tier_Migration](./sql_queries/customer_analysis/Customer_Loyalty_Tier_Migration.sql)
 
 4. Average Order Value by Product Category over Customer Lifespan Quartiles
 
@@ -111,7 +111,7 @@ Insight: Calculated the average number of days between consecutive orders for ea
 
 SQL Skills: JOIN, LAG(), DATEDIFF(), AVG(), Window Functions (PARTITION BY, ORDER BY), GROUP BY.
 
-Code: [`sql_queries/customer_analysis/Avg_Time_Between_Orders.sql`](./sql_queries/customer_analysis/Avg_Time_Between_Orders.sql)
+Code: [Avg_Time_Between_Orders.sql](./sql_queries/customer_analysis/Avg_Time_Between_Orders.sql)
 
 6. Order History with Previous Order Date for Same Customer
 
@@ -296,8 +296,6 @@ To explore these SQL solutions:
 Clone the Repository:
 
 git clone https://github.com/amitha05jones/Data_Analysis_SQL_Skills.git
-
-Replace amitha05jones with your actual GitHub username.
 
 Navigate to the sql_queries Directory: The .sql files are organized within subfolders based on their analytical domain: customer_analysis, product_analysis, sales_performance, and sales_reporting. You will need to ensure your local repository has these subfolders and that the corresponding .sql files are placed correctly within them, matching the filenames referenced in this README.md.
 

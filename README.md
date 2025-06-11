@@ -73,7 +73,7 @@ Insight: Identified customers who upgraded or downgraded loyalty tiers year-over
 
 SQL Skills: CTE, LAG(), CASE WHEN, Window Functions, DATE_FORMAT(), YEAR(), SUM(), GROUP BY.
 
-Code: sql_queries/customer_analysis/Q27_Customer_Loyalty_Tier_Migration.sql
+Code: sql_queries/customer_analysis/Customer_Loyalty_Tier_Migration.sql
 
 2. Average Order Value by Product Category over Customer Lifespan Quartiles 
 

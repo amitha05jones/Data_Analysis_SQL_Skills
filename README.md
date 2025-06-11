@@ -247,6 +247,8 @@ Code: [Customer Demographic Insights](./sql_queries/customer_analysis/Customer_D
 
 ### Full Query List (For Comprehensive Review)
 
+This section provides a complete listing of all 30+ analytical SQL queries in this repository, organized by their primary business analysis area. Each link directs to the corresponding SQL file for detailed review.
+
 ### Customer Analysis
 * [Avg_Customer_Order_Value_by_Age_Group.sql](sql_queries/customer_analysis/Avg_Customer_Order_Value_by_Age_Group.sql)
 * [Avg_Order_Value_Lifespan_Quartiles.sql](sql_queries/customer_analysis/Avg_Order_Value_Lifespan_Quartiles.sql)

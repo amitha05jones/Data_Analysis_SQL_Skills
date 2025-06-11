@@ -177,6 +177,9 @@ This section provides a complete listing of all 30+ analytical SQL queries in th
 
 Customer Segmentation & Lifetime Value
 
+Customer Demographic Insights 
+[`sql_queries/customer_analysis/Customer_Demographic_Insights.sql`](./sql_queries/customer_analysis/Customer_Demographic_Insights.sql)
+
 Customer Lifetime Value (CLTV) Calculation
 
 Customer Churn Prediction Factors
@@ -246,9 +249,7 @@ To explore these SQL solutions:
 
 Clone the Repository:
 
-git clone https://github.com/YourUsername/Data_Analysis_SQL_Skills.git
-
-Replace YourUsername with your actual GitHub username.
+git clone https://github.com/amitha05jones/Data_Analysis_SQL_Skills.git
 
 Navigate to the sql_queries Directory: The .sql files are organized within subfolders based on their analytical domain. You will need to create these subfolders (customer_analysis, product_analysis, sales_performance, sales_reporting) in your local repository and place the corresponding .sql files into them.
 

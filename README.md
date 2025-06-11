@@ -63,7 +63,7 @@ This section highlights a selection of the most impactful and diverse SQL querie
 
 These queries focus on understanding customer actions, grouping them into valuable segments, and analyzing their purchasing habits and value over their lifecycle.
 
-Comprehensive Customer Overview & Segmentation Report
+1. Comprehensive Customer Overview & Segmentation Report
 
 Business Question: How can we consolidate key customer metrics and segment our customer base for targeted strategies?
 
@@ -287,14 +287,17 @@ Code: [Customer Demographic Insights](./sql_queries/customer_analysis/Customer_D
 * [Monthly_Sales_Trends.sql](sql_queries/sales_reporting/Monthly_Sales_Trends.sql)
 * [Quarter_Over_Quarter_Sales_Growth_for_Products.sql](sql_queries/sales_reporting/Quarter_Over_Quarter_Sales_Growth_for_Products.sql)
 
-How To Use
+### How To Use
+
 To explore these SQL solutions:
 
 Clone the Repository:
 
 git clone https://github.com/amitha05jones/Data_Analysis_SQL_Skills.git
 
-Navigate to the sql_queries Directory: The .sql files are organized within subfolders based on their analytical domain. You will need to create these subfolders (customer_analysis, product_analysis, sales_performance, sales_reporting) in your local repository and place the corresponding .sql files into them.
+Replace amitha05jones with your actual GitHub username.
+
+Navigate to the sql_queries Directory: The .sql files are organized within subfolders based on their analytical domain: customer_analysis, product_analysis, sales_performance, and sales_reporting. You will need to ensure your local repository has these subfolders and that the corresponding .sql files are placed correctly within them, matching the filenames referenced in this README.md.
 
 Execute Queries: These queries are written in standard SQL and should be compatible with most relational database management systems (like MySQL, PostgreSQL, SQL Server) that support the specified functions. You can execute them in your preferred SQL client after setting up the database schema.
 

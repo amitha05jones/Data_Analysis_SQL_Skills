@@ -101,7 +101,7 @@ Insight: Segmented customers into lifespan quartiles (NTILE()) and then calculat
 
 SQL Skills: CTE, NTILE(), DATEDIFF(), MAX(), MIN(), SUM(), AVG(), GROUP BY, JOIN.
 
-Code: [`sql_queries/customer_analysis/Avg_Order_Value_Lifespan_Quartiles.sql`](./sql_queries/customer_analysis/Avg_Order_Value_Lifespan_Quartiles.sql)
+Code: [Avg_Order_Value_Lifespan_Quartiles](./sql_queries/customer_analysis/Avg_Order_Value_Lifespan_Quartiles.sql)
 
 5. Average Time Between Orders for Each Customer
 

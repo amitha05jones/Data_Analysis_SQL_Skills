@@ -8,205 +8,53 @@ gold_dim_customers
 
 Contains customer demographic information.
 
-Column
-
-Type
-
-Description
-
-customer_key
-
-INT
-
-Unique identifier for customer
-
-customer_id
-
-INT
-
-Public-facing customer ID
-
-customer_number
-
-VARCHAR
-
-Alphanumeric customer identifier
-
-first_name
-
-VARCHAR
-
-Customer's first name
-
-last_name
-
-VARCHAR
-
-Customer's last name
-
-country
-
-VARCHAR
-
-Customer's country of residence
-
-marital_status
-
-VARCHAR
-
-Customer's marital status
-
-gender
-
-VARCHAR
-
-Customer's gender
-
-birthdate
-
-DATE
-
-Customer's date of birth
-
-create_date
-
-DATE
-
-Date customer account was created (acquisition)
+| Column          | Type      | Description                                |
+|-----------------|-----------|--------------------------------------------|
+| `customer_key`  | INT       | Unique identifier for customer             |
+| `customer_id`   | INT       | Public-facing customer ID                  |
+| `customer_number`| VARCHAR   | Alphanumeric customer identifier           |
+| `first_name`    | VARCHAR   | Customer's first name                      |
+| `last_name`     | VARCHAR   | Customer's last name                       |
+| `country`       | VARCHAR   | Customer's country of residence            |
+| `marital_status`| VARCHAR   | Customer's marital status                  |
+| `gender`        | VARCHAR   | Customer's gender                          |
+| `birthdate`     | DATE      | Customer's date of birth                   |
+| `create_date`   | DATE      | Date customer account was created (acquisition) |
 
 gold_dim_products
 
 Contains product details.
 
-Column
-
-Type
-
-Description
-
-product_key
-
-INT
-
-Unique identifier for product
-
-product_id
-
-INT
-
-Public-facing product ID
-
-product_number
-
-VARCHAR
-
-Alphanumeric product identifier
-
-product_name
-
-VARCHAR
-
-Name of the product
-
-category_id
-
-VARCHAR
-
-Identifier for the product category
-
-category
-
-VARCHAR
-
-Broad product category (e.g., 'Electronics')
-
-subcategory
-
-VARCHAR
-
-Specific product subcategory (e.g., 'Laptops')
-
-maintenance
-
-VARCHAR
-
-Maintenance information (e.g., 'Low', 'High')
-
-cost
-
-INT
-
-Manufacturing or acquisition cost of the product
-
-product_line
-
-VARCHAR
-
-Product line (e.g., 'Premium', 'Basic')
-
-start_date
-
-DATE
-
-Date product became available
+| Column          | Type      | Description                                |
+|-----------------|-----------|--------------------------------------------|
+| `product_key`   | INT       | Unique identifier for product              |
+| `product_id`    | INT       | Public-facing product ID                   |
+| `product_number`| VARCHAR   | Alphanumeric product identifier            |
+| `product_name`  | VARCHAR   | Name of the product                        |
+| `category_id`   | VARCHAR   | Identifier for the product category        |
+| `category`      | VARCHAR   | Broad product category (e.g., 'Electronics') |
+| `subcategory`   | VARCHAR   | Specific product subcategory (e.g., 'Laptops') |
+| `maintenance`   | VARCHAR   | Maintenance information (e.g., 'Low', 'High') |
+| `cost`          | INT       | Manufacturing or acquisition cost of the product |
+| `product_line`  | VARCHAR   | Product line (e.g., 'Premium', 'Basic')    |
+| `start_date`    | DATE      | Date product became available              |
 
 gold_fact_sales
 
 Contains sales transaction data.
 
-Column
+| Column         | Type     | Description                                  |
+|----------------|----------|----------------------------------------------|
+| `order_number` | VARCHAR  | Unique identifier for each order             |
+| `product_key`  | INT      | Foreign key linking to `gold_dim_products`   |
+| `customer_key` | INT      | Foreign key linking to `gold_dim_customers`  |
+| `order_date`   | DATE     | Date the order was placed                    |
+| `shipping_date`| DATE     | Date the order was shipped                   |
+| `due_date`     | DATE     | Due date for payment                         |
+| `sales_amount` | INT      | Sales amount for the line item/product in the order |
+| `quantity`     | TINYINT  | Quantity of the product sold in the line item |
 
-Type
 
-Description
-
-order_number
-
-VARCHAR
-
-Unique identifier for each order
-
-product_key
-
-INT
-
-Foreign key linking to gold_dim_products
-
-customer_key
-
-INT
-
-Foreign key linking to gold_dim_customers
-
-order_date
-
-DATE
-
-Date the order was placed
-
-shipping_date
-
-DATE
-
-Date the order was shipped
-
-due_date
-
-DATE
-
-Due date for payment
-
-sales_amount
-
-INT
-
-Sales amount for the line item/product in the order
-
-quantity
-
-TINYINT
-
-Quantity of the product sold in the line item
 
 Key Business Problems & SQL Solutions
 This section highlights a selection of the most impactful SQL queries in this repository, showcasing diverse analytical challenges and the SQL techniques used to solve them, categorized by their primary business focus.

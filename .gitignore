@@ -1,0 +1,14 @@
+.DS_Store
+# IDE specific files
+.vscode/
+.idea/
+*.bak
+*.tmp
+*.log
+ # Add a blank line for readability
+# Data export files (usually not committed)
+*.csv
+*.xlsx
+*.json
+*.parquet
+*.txt # Add .txt to ignore test.txt and any future raw text files

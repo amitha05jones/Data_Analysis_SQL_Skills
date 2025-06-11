@@ -1,71 +1,69 @@
 SQL for Business Analyst Portfolio
-
-This repository contains a collection of SQL queries designed to solve real-world business problems across various domains like sales, customer behavior, and product performance. 
-
-Developed for a Business Analyst role, this project demonstrates proficiency in advanced SQL techniques, 
-including Common Table Expressions (CTEs), Window Functions, Subqueries, Self-Joins, and complex aggregations, 
-all aimed at extracting actionable insights from transactional and dimensional data.
+This repository contains a collection of SQL queries designed to solve real-world business problems across various domains like sales, customer behavior, and product performance. Developed for a Business Analyst role, this project demonstrates proficiency in advanced SQL techniques, including Common Table Expressions (CTEs), Window Functions, Subqueries, Self-Joins, and complex aggregations, all aimed at extracting actionable insights from transactional and dimensional data.
 
 Database Schema
 This project utilizes a foundational e-commerce database schema comprising three tables:
 
-### `gold_dim_customers`
+gold_dim_customers
+
 Contains customer demographic information.
 
-| Column          | Type      | Description                                     |
-|-----------------|-----------|-------------------------------------------------|
-| `customer_key`  | INT       | Unique identifier for customer                  |
-| `customer_id`   | INT       | Public-facing customer ID                       |
-| `customer_number`| VARCHAR   | Alphanumeric customer identifier               |
-| `first_name`    | VARCHAR   | Customer's first name                           |
-| `last_name`     | VARCHAR   | Customer's last name                            |
-| `country`       | VARCHAR   | Customer's country of residence                 |
-| `marital_status`| VARCHAR   | Customer's marital status                       |
-| `gender`        | VARCHAR   | Customer's gender                               |
-| `birthdate`     | DATE      | Customer's date of birth                        |
+| Column          | Type      | Description                                |
+|-----------------|-----------|--------------------------------------------|
+| `customer_key`  | INT       | Unique identifier for customer             |
+| `customer_id`   | INT       | Public-facing customer ID                  |
+| `customer_number`| VARCHAR   | Alphanumeric customer identifier           |
+| `first_name`    | VARCHAR   | Customer's first name                      |
+| `last_name`     | VARCHAR   | Customer's last name                       |
+| `country`       | VARCHAR   | Customer's country of residence            |
+| `marital_status`| VARCHAR   | Customer's marital status                  |
+| `gender`        | VARCHAR   | Customer's gender                          |
+| `birthdate`     | DATE      | Customer's date of birth                   |
 | `create_date`   | DATE      | Date customer account was created (acquisition) |
 
-### `gold_dim_products`
+gold_dim_products
+
 Contains product details.
 
-| Column          | Type      | Description                                      |
-|-----------------|-----------|--------------------------------------------------|
-| `product_key`   | INT       | Unique identifier for product                    |
-| `product_id`    | INT       | Public-facing product ID                         |
-| `product_number`| VARCHAR   | Alphanumeric product identifier                  |
-| `product_name`  | VARCHAR   | Name of the product                              |
-| `category_id`   | VARCHAR   | Identifier for the product category              |
-| `category`      | VARCHAR   | Broad product category (e.g., 'Electronics')     |
-| `subcategory`   | VARCHAR   | Specific product subcategory (e.g., 'Laptops')   |
-| `maintenance`   | VARCHAR   | Maintenance information (e.g., 'Low', 'High')    |
+| Column          | Type      | Description                                |
+|-----------------|-----------|--------------------------------------------|
+| `product_key`   | INT       | Unique identifier for product              |
+| `product_id`    | INT       | Public-facing product ID                   |
+| `product_number`| VARCHAR   | Alphanumeric product identifier            |
+| `product_name`  | VARCHAR   | Name of the product                        |
+| `category_id`   | VARCHAR   | Identifier for the product category        |
+| `category`      | VARCHAR   | Broad product category (e.g., 'Electronics') |
+| `subcategory`   | VARCHAR   | Specific product subcategory (e.g., 'Laptops') |
+| `maintenance`   | VARCHAR   | Maintenance information (e.g., 'Low', 'High') |
 | `cost`          | INT       | Manufacturing or acquisition cost of the product |
-| `product_line`  | VARCHAR   | Product line (e.g., 'Premium', 'Basic')          |
-| `start_date`    | DATE      | Date product became available                    |
+| `product_line`  | VARCHAR   | Product line (e.g., 'Premium', 'Basic')    |
+| `start_date`    | DATE      | Date product became available              |
 
-### `gold_fact_sales`
+gold_fact_sales
+
 Contains sales transaction data.
 
-| Column         | Type     | Description                                         |
-|----------------|----------|-----------------------------------------------------|
-| `order_number` | VARCHAR  | Unique identifier for each order                    |
-| `product_key`  | INT      | Foreign key linking to `gold_dim_products`          |
-| `customer_key` | INT      | Foreign key linking to `gold_dim_customers`         |
-| `order_date`   | DATE     | Date the order was placed                           |
-| `shipping_date`| DATE     | Date the order was shipped                          |
-| `due_date`     | DATE     | Due date for payment                                |
+| Column         | Type     | Description                                  |
+|----------------|----------|----------------------------------------------|
+| `order_number` | VARCHAR  | Unique identifier for each order             |
+| `product_key`  | INT      | Foreign key linking to `gold_dim_products`   |
+| `customer_key` | INT      | Foreign key linking to `gold_dim_customers`  |
+| `order_date`   | DATE     | Date the order was placed                    |
+| `shipping_date`| DATE     | Date the order was shipped                   |
+| `due_date`     | DATE     | Due date for payment                         |
 | `sales_amount` | INT      | Sales amount for the line item/product in the order |
-| `quantity`     | TINYINT  | Quantity of the product sold in the line item       |
+| `quantity`     | TINYINT  | Quantity of the product sold in the line item |
+
 
 
 Key Business Problems & SQL Solutions
-This section highlights a selection of the most impactful SQL queries in this repository, 
-showcasing diverse analytical challenges and the SQL techniques used to solve them, categorized by their primary business focus.
+This section highlights a selection of the most impactful SQL queries in this repository, showcasing diverse analytical challenges and the SQL techniques used to solve them, categorized by their primary business focus.
 
 Customer Behavior & Segmentation
 
 These queries focus on understanding customer actions, grouping them into valuable segments, and analyzing their purchasing habits over their lifecycle.
 
-1. Customer Loyalty Tier Migration Analysis 
+Customer Loyalty Tier Migration Analysis
 
 Business Question: How do customers move between loyalty tiers based on their annual spend?
 
@@ -73,9 +71,9 @@ Insight: Identified customers who upgraded or downgraded loyalty tiers year-over
 
 SQL Skills: CTE, LAG(), CASE WHEN, Window Functions, DATE_FORMAT(), YEAR(), SUM(), GROUP BY.
 
-Code: sql_queries/customer_analysis/Q27_Customer_Loyalty_Tier_Migration.sql
+Code:  [`sql_queries/customer_analysis/Customer_Loyalty_Tier_Migration.sql`](./sql_queries/customer_analysis/Customer_Loyalty_Tier_Migration.sql)
 
-2. Average Order Value by Product Category over Customer Lifespan Quartiles 
+Average Order Value by Product Category over Customer Lifespan Quartiles
 
 Business Question: Do customer purchasing behaviors in specific product categories vary based on their tenure with the company?
 
@@ -83,9 +81,9 @@ Insight: Segmented customers into lifespan quartiles (NTILE()) and then calculat
 
 SQL Skills: CTE, NTILE(), DATEDIFF(), MAX(), MIN(), SUM(), AVG(), GROUP BY, JOIN.
 
-Code: sql_queries/customer_analysis/Q30_Avg_Order_Value_Lifespan_Quartiles.sql
+Code: [`sql_queries/customer_analysis/Avg_Order_Value_Lifespan_Quartiles.sql`](./sql_queries/customer_analysis/Avg_Order_Value_Lifespan_Quartiles.sql)
 
-3. Average Time Between Orders for Each Customer
+Average Time Between Orders for Each Customer
 
 Business Question: Customer experience wants to understand typical repurchase intervals.
 
@@ -93,9 +91,9 @@ Insight: Calculated the average number of days between consecutive orders for ea
 
 SQL Skills: CTE, LAG(), DATEDIFF(), AVG(), Window Functions, GROUP BY, JOIN.
 
-Code: sql_queries/customer_analysis/Q25_Avg_Time_Between_Orders.sql
+Code: [`sql_queries/customer_analysis/Avg_Time_Between_Orders.sql`](./sql_queries/customer_analysis/Avg_Time_Between_Orders.sql)
 
-4. Customers with Above-Average Order Count in Their Country 
+Customers with Above-Average Order Count in Their Country
 
 Business Question: Marketing wants to identify highly engaged customers who are outliers within their own geographic region.
 
@@ -103,13 +101,13 @@ Insight: Found customers whose total number of orders exceeded the average order
 
 SQL Skills: Subquery, JOIN, COUNT(DISTINCT), AVG(), GROUP BY, HAVING.
 
-Code: sql_queries/customer_analysis/Q22_Customers_Above_Avg_Orders.sql
+Code: [`sql_queries/customer_analysis/Customers_Above_Avg_Orders.sql`](./sql_queries/customer_analysis/Customers_Above_Avg_Orders.sql)
 
 Product Performance & Strategy
 
 These queries analyze individual product performance, identify relationships between products, and support strategic decisions related to product development, merchandising, and sales force effectiveness.
 
-5. Product Co-Purchasing (Market Basket Analysis)
+Product Co-Purchasing (Market Basket Analysis)
 
 Business Question: Which products are most frequently purchased together in the same order?
 
@@ -117,9 +115,9 @@ Insight: Identified the top 10 pairs of products commonly bought in the same tra
 
 SQL Skills: CTE, Self-JOIN on a fact table, COUNT(*), GROUP BY, WHERE (for unique pair ordering), ORDER BY, LIMIT.
 
-Code: sql_queries/product_analysis/Product_Co_Purchasing_Market_Basket_Analysis.sql
+Code: [`sql_queries/product_analysis/Product_Co_Purchasing_Market_Basket_Analysis.sql`](./sql_queries/product_analysis/Product_Co_Purchasing_Market_Basket_Analysis.sql)
 
-6. Products with Sales Spikes 
+Products with Sales Spikes
 
 Business Question: The supply chain team needs to identify products with unusually high sales on a specific day compared to their average daily sales.
 
@@ -127,9 +125,9 @@ Insight: Found products and order dates where daily sales were more than 3 times
 
 SQL Skills: Subquery, AVG(), SUM(), GROUP BY, JOIN, WHERE (for thresholding).
 
-Code: sql_queries/product_analysis/Q28_Products_With_Sales_Spikes.sql
+Code: [`sql_queries/product_analysis/Products_With_Sales_Spikes.sql`](./sql_queries/product_analysis/Products_With_Sales_Spikes.sql)
 
-7. Employee Performance Ranking (Sales Rep Stand-in) 
+Employee Performance Ranking (Sales Rep Stand-in)
 
 Business Question: Sales management wants to rank sales representatives by their total sales each month and compare their rank to the total sales of their country.
 
@@ -137,13 +135,13 @@ Insight: Provided detailed monthly performance rankings for sales representative
 
 SQL Skills: CTE, RANK(), SUM() OVER, PARTITION BY, ORDER BY, JOIN, DATE_FORMAT().
 
-Code: sql_queries/sales_performance/Q29_Employee_Performance_Ranking.sql
+Code: [`sql_queries/sales_performance/Employee_Performance_Ranking.sql`](./sql_queries/sales_performance/Employee_Performance_Ranking.sql)
 
 Time-Series Analysis
 
 These queries focus on analyzing data over time, identifying trends, calculating growth rates, and monitoring cumulative performance.
 
-8. Products with Sales Decrease from Previous Quarter 
+Products with Sales Decrease from Previous Quarter
 
 Business Question: Product management wants to quickly spot products experiencing a decline in sales.
 
@@ -151,9 +149,9 @@ Insight: Identified products where the total sales amount in a quarter was lower
 
 SQL Skills: CTE, LAG(), QUARTER(), YEAR(), SUM(), GROUP BY, Window Functions, WHERE, CASE WHEN.
 
-Code: sql_queries/product_analysis/Q24_Products_Sales_Decrease_Prev_Quarter.sql
+Code: [`sql_queries/product_analysis/Products_Sales_Decrease_Prev_Quarter.sql`](./sql_queries/product_analysis/Products_Sales_Decrease_Prev_Quarter.sql)
 
-9. Identifying Top 5 Product Categories by Growth in Latest Quarter 
+Identifying Top 5 Product Categories by Growth in Latest Quarter
 
 Business Question: The executive team is looking for high-growth areas within the product portfolio.
 
@@ -161,9 +159,9 @@ Insight: Identified the top 5 product categories with the highest sales growth p
 
 SQL Skills: CTE, LAG(), ROW_NUMBER(), SUM(), GROUP BY, Window Functions, CASE WHEN (for division-by-zero handling), ORDER BY, LIMIT.
 
-Code: sql_queries/product_analysis/Q26_Top_5_Product_Categories_Growth.sql
+Code: [`sql_queries/product_analysis/Top_5_Product_Categories_Growth.sql`](./sql_queries/product_analysis/Top_5_Product_Categories_Growth.sql)
 
-10. Cumulative Sales by Product Category Over Time
+Cumulative Sales by Product Category Over Time
 
 Business Question: Finance needs to monitor the cumulative sales performance of each product category throughout the year.
 
@@ -171,10 +169,82 @@ Insight: Provided a running total of sales for each product category month-over-
 
 SQL Skills: CTE, SUM() OVER, DATE_FORMAT(), GROUP BY, PARTITION BY, ORDER BY.
 
-Code: sql_queries/sales_reporting/Q23_Cumulative_Sales_By_Category.sql
+Code: [`sql_queries/sales_reporting/Cumulative_Sales_By_Category.sql`](./sql_queries/sales_reporting/Cumulative_Sales_By_Category.sql)
+
+Full Query List (For Comprehensive Review)
+
+This section provides a complete listing of all 30+ analytical SQL queries in this repository, organized by their primary business analysis area. Each link directs to the corresponding SQL file for detailed review.
+
+Customer Segmentation & Lifetime Value
+
+Customer Demographic Insights 
+[`sql_queries/customer_analysis/Customer_Demographic_Insights.sql`](./sql_queries/customer_analysis/Customer_Demographic_Insights.sql)
+
+Customer Lifetime Value (CLTV) Calculation
+
+Customer Churn Prediction Factors
+
+RFM Segmentation Analysis
+
+Average Time Between Orders for Each Customer
+
+Avg Order Value by Product Category over Customer Lifespan Quartiles
+
+Top 10 Customers by Spend per Country
+
+Customer Acquisition Cost (CAC) by Channel (Hypothetical)
+
+Customer Cohort Analysis - First Purchase to Repeat Purchase
+
+Customers with High Returns Rate
+
+Customer Segmentation by Product Preference
+
+Customer Loyalty Tier Migration Analysis
+
+Cross-Channel Customer Behavior (Hypothetical)
+
+Product Performance & Strategy
+
+Product Co-Purchasing (Market Basket Analysis)
+
+Product Profitability by Category
+
+Inventory Turnover Rate by Product
+
+Top Selling Products by Region
+
+Products with Sales Decrease from Previous Quarter
+
+Products with Sales Spikes
+
+Identifying Top 5 Product Categories by Growth in Latest Quarter
+
+Sales Trend & Forecasting
+
+Cumulative Sales by Product Category Over Time
+
+Monthly Sales Growth Rate
+
+Average Sales Cycle Length
+
+Sales Performance by Weekday/Time of Day
+
+Employee Performance Ranking
+
+Quarter-over-Quarter Sales Comparison
+
+Sales Funnel Conversion Rates (Hypothetical Stages)
+
+Geographic & Demographic Analysis
+
+Customers with Above-Average Order Count in Their Country
+
+Top 5 Countries by Total Sales
+
+Customer Demographics by Product Category Preference
 
 How To Use
-
 To explore these SQL solutions:
 
 Clone the Repository:

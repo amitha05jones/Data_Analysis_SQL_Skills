@@ -81,7 +81,7 @@ Insight: Segmented customers into lifespan quartiles (NTILE()) and then calculat
 
 SQL Skills: CTE, NTILE(), DATEDIFF(), MAX(), MIN(), SUM(), AVG(), GROUP BY, JOIN.
 
-Code: sql_queries/customer_analysis/Avg_Order_Value_Lifespan_Quartiles.sql
+Code: [`sql_queries/customer_analysis/Avg_Order_Value_Lifespan_Quartiles.sql`](./sql_queries/customer_analysis/Avg_Order_Value_Lifespan_Quartiles.sql)
 
 Average Time Between Orders for Each Customer
 
@@ -91,7 +91,7 @@ Insight: Calculated the average number of days between consecutive orders for ea
 
 SQL Skills: CTE, LAG(), DATEDIFF(), AVG(), Window Functions, GROUP BY, JOIN.
 
-Code: sql_queries/customer_analysis/Avg_Time_Between_Orders.sql
+Code: [`sql_queries/customer_analysis/Avg_Time_Between_Orders.sql`](./sql_queries/customer_analysis/Avg_Time_Between_Orders.sql)
 
 Customers with Above-Average Order Count in Their Country
 
@@ -101,7 +101,7 @@ Insight: Found customers whose total number of orders exceeded the average order
 
 SQL Skills: Subquery, JOIN, COUNT(DISTINCT), AVG(), GROUP BY, HAVING.
 
-Code: sql_queries/customer_analysis/Customers_Above_Avg_Orders.sql
+Code: [`sql_queries/customer_analysis/Customers_Above_Avg_Orders.sql`](./sql_queries/customer_analysis/Customers_Above_Avg_Orders.sql)
 
 Product Performance & Strategy
 
@@ -115,7 +115,7 @@ Insight: Identified the top 10 pairs of products commonly bought in the same tra
 
 SQL Skills: CTE, Self-JOIN on a fact table, COUNT(*), GROUP BY, WHERE (for unique pair ordering), ORDER BY, LIMIT.
 
-Code: sql_queries/product_analysis/Product_Co_Purchasing_Market_Basket_Analysis.sql
+Code: [`sql_queries/product_analysis/Product_Co_Purchasing_Market_Basket_Analysis.sql`](./sql_queries/product_analysis/Product_Co_Purchasing_Market_Basket_Analysis.sql)
 
 Products with Sales Spikes
 
@@ -125,7 +125,7 @@ Insight: Found products and order dates where daily sales were more than 3 times
 
 SQL Skills: Subquery, AVG(), SUM(), GROUP BY, JOIN, WHERE (for thresholding).
 
-Code: sql_queries/product_analysis/Products_With_Sales_Spikes.sql
+Code: [`sql_queries/product_analysis/Products_With_Sales_Spikes.sql`](./sql_queries/product_analysis/Products_With_Sales_Spikes.sql)
 
 Employee Performance Ranking (Sales Rep Stand-in)
 
@@ -135,7 +135,7 @@ Insight: Provided detailed monthly performance rankings for sales representative
 
 SQL Skills: CTE, RANK(), SUM() OVER, PARTITION BY, ORDER BY, JOIN, DATE_FORMAT().
 
-Code: sql_queries/sales_performance/Employee_Performance_Ranking.sql
+Code: [`sql_queries/sales_performance/Employee_Performance_Ranking.sql`](./sql_queries/sales_performance/Employee_Performance_Ranking.sql)
 
 Time-Series Analysis
 
@@ -149,7 +149,7 @@ Insight: Identified products where the total sales amount in a quarter was lower
 
 SQL Skills: CTE, LAG(), QUARTER(), YEAR(), SUM(), GROUP BY, Window Functions, WHERE, CASE WHEN.
 
-Code: sql_queries/product_analysis/Products_Sales_Decrease_Prev_Quarter.sql
+Code: [`sql_queries/product_analysis/Products_Sales_Decrease_Prev_Quarter.sql`](./sql_queries/product_analysis/Products_Sales_Decrease_Prev_Quarter.sql)
 
 Identifying Top 5 Product Categories by Growth in Latest Quarter
 
@@ -159,7 +159,7 @@ Insight: Identified the top 5 product categories with the highest sales growth p
 
 SQL Skills: CTE, LAG(), ROW_NUMBER(), SUM(), GROUP BY, Window Functions, CASE WHEN (for division-by-zero handling), ORDER BY, LIMIT.
 
-Code: sql_queries/product_analysis/Top_5_Product_Categories_Growth.sql
+Code: [`sql_queries/product_analysis/Top_5_Product_Categories_Growth.sql`](./sql_queries/product_analysis/Top_5_Product_Categories_Growth.sql)
 
 Cumulative Sales by Product Category Over Time
 
@@ -169,7 +169,7 @@ Insight: Provided a running total of sales for each product category month-over-
 
 SQL Skills: CTE, SUM() OVER, DATE_FORMAT(), GROUP BY, PARTITION BY, ORDER BY.
 
-Code: sql_queries/sales_reporting/Cumulative_Sales_By_Category.sql
+Code: [`sql_queries/sales_reporting/Cumulative_Sales_By_Category.sql`](./sql_queries/sales_reporting/Cumulative_Sales_By_Category.sql)
 
 How To Use
 To explore these SQL solutions:

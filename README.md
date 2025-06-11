@@ -1,60 +1,212 @@
 SQL for Business Analyst Portfolio
-
-This repository contains a collection of SQL queries designed to solve real-world business problems across various domains like sales, customer behavior, and product performance. 
-
-Developed for a Business Analyst role, this project demonstrates proficiency in advanced SQL techniques, 
-including Common Table Expressions (CTEs), Window Functions, Subqueries, Self-Joins, and complex aggregations, 
-all aimed at extracting actionable insights from transactional and dimensional data.
+This repository contains a collection of SQL queries designed to solve real-world business problems across various domains like sales, customer behavior, and product performance. Developed for a Business Analyst role, this project demonstrates proficiency in advanced SQL techniques, including Common Table Expressions (CTEs), Window Functions, Subqueries, Self-Joins, and complex aggregations, all aimed at extracting actionable insights from transactional and dimensional data.
 
 Database Schema
 This project utilizes a foundational e-commerce database schema comprising three tables:
 
-### `gold_dim_customers`
+gold_dim_customers
+
 Contains customer demographic information.
 
-| Column          | Type      | Description                                     |
-|-----------------|-----------|-------------------------------------------------|
-| `customer_key`  | INT       | Unique identifier for customer                  |
-| `customer_id`   | INT       | Public-facing customer ID                       |
-| `customer_number`| VARCHAR   | Alphanumeric customer identifier               |
-| `first_name`    | VARCHAR   | Customer's first name                           |
-| `last_name`     | VARCHAR   | Customer's last name                            |
-| `country`       | VARCHAR   | Customer's country of residence                 |
-| `marital_status`| VARCHAR   | Customer's marital status                       |
-| `gender`        | VARCHAR   | Customer's gender                               |
-| `birthdate`     | DATE      | Customer's date of birth                        |
-| `create_date`   | DATE      | Date customer account was created (acquisition) |
+Column
 
-### `gold_dim_products`
+Type
+
+Description
+
+customer_key
+
+INT
+
+Unique identifier for customer
+
+customer_id
+
+INT
+
+Public-facing customer ID
+
+customer_number
+
+VARCHAR
+
+Alphanumeric customer identifier
+
+first_name
+
+VARCHAR
+
+Customer's first name
+
+last_name
+
+VARCHAR
+
+Customer's last name
+
+country
+
+VARCHAR
+
+Customer's country of residence
+
+marital_status
+
+VARCHAR
+
+Customer's marital status
+
+gender
+
+VARCHAR
+
+Customer's gender
+
+birthdate
+
+DATE
+
+Customer's date of birth
+
+create_date
+
+DATE
+
+Date customer account was created (acquisition)
+
+gold_dim_products
+
 Contains product details.
 
-| Column          | Type      | Description                                      |
-|-----------------|-----------|--------------------------------------------------|
-| `product_key`   | INT       | Unique identifier for product                    |
-| `product_id`    | INT       | Public-facing product ID                         |
-| `product_number`| VARCHAR   | Alphanumeric product identifier                  |
-| `product_name`  | VARCHAR   | Name of the product                              |
-| `category_id`   | VARCHAR   | Identifier for the product category              |
-| `category`      | VARCHAR   | Broad product category (e.g., 'Electronics')     |
-| `subcategory`   | VARCHAR   | Specific product subcategory (e.g., 'Laptops')   |
-| `maintenance`   | VARCHAR   | Maintenance information (e.g., 'Low', 'High')    |
-| `cost`          | INT       | Manufacturing or acquisition cost of the product |
-| `product_line`  | VARCHAR   | Product line (e.g., 'Premium', 'Basic')          |
-| `start_date`    | DATE      | Date product became available                    |
+Column
 
-### `gold_fact_sales`
+Type
+
+Description
+
+product_key
+
+INT
+
+Unique identifier for product
+
+product_id
+
+INT
+
+Public-facing product ID
+
+product_number
+
+VARCHAR
+
+Alphanumeric product identifier
+
+product_name
+
+VARCHAR
+
+Name of the product
+
+category_id
+
+VARCHAR
+
+Identifier for the product category
+
+category
+
+VARCHAR
+
+Broad product category (e.g., 'Electronics')
+
+subcategory
+
+VARCHAR
+
+Specific product subcategory (e.g., 'Laptops')
+
+maintenance
+
+VARCHAR
+
+Maintenance information (e.g., 'Low', 'High')
+
+cost
+
+INT
+
+Manufacturing or acquisition cost of the product
+
+product_line
+
+VARCHAR
+
+Product line (e.g., 'Premium', 'Basic')
+
+start_date
+
+DATE
+
+Date product became available
+
+gold_fact_sales
+
 Contains sales transaction data.
 
-| Column         | Type     | Description                                         |
-|----------------|----------|-----------------------------------------------------|
-| `order_number` | VARCHAR  | Unique identifier for each order                    |
-| `product_key`  | INT      | Foreign key linking to `gold_dim_products`          |
-| `customer_key` | INT      | Foreign key linking to `gold_dim_customers`         |
-| `order_date`   | DATE     | Date the order was placed                           |
-| `shipping_date`| DATE     | Date the order was shipped                          |
-| `due_date`     | DATE     | Due date for payment                                |
-| `sales_amount` | INT      | Sales amount for the line item/product in the order |
-| `quantity`     | TINYINT  | Quantity of the product sold in the line item       |
+Column
+
+Type
+
+Description
+
+order_number
+
+VARCHAR
+
+Unique identifier for each order
+
+product_key
+
+INT
+
+Foreign key linking to gold_dim_products
+
+customer_key
+
+INT
+
+Foreign key linking to gold_dim_customers
+
+order_date
+
+DATE
+
+Date the order was placed
+
+shipping_date
+
+DATE
+
+Date the order was shipped
+
+due_date
+
+DATE
+
+Due date for payment
+
+sales_amount
+
+INT
+
+Sales amount for the line item/product in the order
+
+quantity
+
+TINYINT
+
+Quantity of the product sold in the line item
 
 Key Business Problems & SQL Solutions
 This section highlights a selection of the most impactful SQL queries in this repository, showcasing diverse analytical challenges and the SQL techniques used to solve them, categorized by their primary business focus.
@@ -63,7 +215,7 @@ Customer Behavior & Segmentation
 
 These queries focus on understanding customer actions, grouping them into valuable segments, and analyzing their purchasing habits over their lifecycle.
 
-1. Customer Loyalty Tier Migration Analysis
+Customer Loyalty Tier Migration Analysis
 
 Business Question: How do customers move between loyalty tiers based on their annual spend?
 
@@ -73,7 +225,7 @@ SQL Skills: CTE, LAG(), CASE WHEN, Window Functions, DATE_FORMAT(), YEAR(), SUM(
 
 Code: sql_queries/customer_analysis/Customer_Loyalty_Tier_Migration.sql
 
-2. Average Order Value by Product Category over Customer Lifespan Quartiles
+Average Order Value by Product Category over Customer Lifespan Quartiles
 
 Business Question: Do customer purchasing behaviors in specific product categories vary based on their tenure with the company?
 
@@ -83,7 +235,7 @@ SQL Skills: CTE, NTILE(), DATEDIFF(), MAX(), MIN(), SUM(), AVG(), GROUP BY, JOIN
 
 Code: sql_queries/customer_analysis/Avg_Order_Value_Lifespan_Quartiles.sql
 
-3. Average Time Between Orders for Each Customer
+Average Time Between Orders for Each Customer
 
 Business Question: Customer experience wants to understand typical repurchase intervals.
 
@@ -93,7 +245,7 @@ SQL Skills: CTE, LAG(), DATEDIFF(), AVG(), Window Functions, GROUP BY, JOIN.
 
 Code: sql_queries/customer_analysis/Avg_Time_Between_Orders.sql
 
-4. Customers with Above-Average Order Count in Their Country
+Customers with Above-Average Order Count in Their Country
 
 Business Question: Marketing wants to identify highly engaged customers who are outliers within their own geographic region.
 
@@ -107,7 +259,7 @@ Product Performance & Strategy
 
 These queries analyze individual product performance, identify relationships between products, and support strategic decisions related to product development, merchandising, and sales force effectiveness.
 
-5. Product Co-Purchasing (Market Basket Analysis)
+Product Co-Purchasing (Market Basket Analysis)
 
 Business Question: Which products are most frequently purchased together in the same order?
 
@@ -117,7 +269,7 @@ SQL Skills: CTE, Self-JOIN on a fact table, COUNT(*), GROUP BY, WHERE (for uniqu
 
 Code: sql_queries/product_analysis/Product_Co_Purchasing_Market_Basket_Analysis.sql
 
-6. Products with Sales Spikes
+Products with Sales Spikes
 
 Business Question: The supply chain team needs to identify products with unusually high sales on a specific day compared to their average daily sales.
 
@@ -127,7 +279,7 @@ SQL Skills: Subquery, AVG(), SUM(), GROUP BY, JOIN, WHERE (for thresholding).
 
 Code: sql_queries/product_analysis/Products_With_Sales_Spikes.sql
 
-7. Employee Performance Ranking (Sales Rep Stand-in)
+Employee Performance Ranking (Sales Rep Stand-in)
 
 Business Question: Sales management wants to rank sales representatives by their total sales each month and compare their rank to the total sales of their country.
 
@@ -141,7 +293,7 @@ Time-Series Analysis
 
 These queries focus on analyzing data over time, identifying trends, calculating growth rates, and monitoring cumulative performance.
 
-8. Products with Sales Decrease from Previous Quarter
+Products with Sales Decrease from Previous Quarter
 
 Business Question: Product management wants to quickly spot products experiencing a decline in sales.
 
@@ -151,7 +303,7 @@ SQL Skills: CTE, LAG(), QUARTER(), YEAR(), SUM(), GROUP BY, Window Functions, WH
 
 Code: sql_queries/product_analysis/Products_Sales_Decrease_Prev_Quarter.sql
 
-9. Identifying Top 5 Product Categories by Growth in Latest Quarter
+Identifying Top 5 Product Categories by Growth in Latest Quarter
 
 Business Question: The executive team is looking for high-growth areas within the product portfolio.
 
@@ -161,7 +313,7 @@ SQL Skills: CTE, LAG(), ROW_NUMBER(), SUM(), GROUP BY, Window Functions, CASE WH
 
 Code: sql_queries/product_analysis/Top_5_Product_Categories_Growth.sql
 
-10. Cumulative Sales by Product Category Over Time
+Cumulative Sales by Product Category Over Time
 
 Business Question: Finance needs to monitor the cumulative sales performance of each product category throughout the year.
 
@@ -172,12 +324,13 @@ SQL Skills: CTE, SUM() OVER, DATE_FORMAT(), GROUP BY, PARTITION BY, ORDER BY.
 Code: sql_queries/sales_reporting/Cumulative_Sales_By_Category.sql
 
 How To Use
-
 To explore these SQL solutions:
 
 Clone the Repository:
 
-git clone https://github.com/amitha05jones/Data_Analysis_SQL_Skills.git
+git clone https://github.com/YourUsername/Data_Analysis_SQL_Skills.git
+
+Replace YourUsername with your actual GitHub username.
 
 Navigate to the sql_queries Directory: The .sql files are organized within subfolders based on their analytical domain. You will need to create these subfolders (customer_analysis, product_analysis, sales_performance, sales_reporting) in your local repository and place the corresponding .sql files into them.
 

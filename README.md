@@ -177,36 +177,52 @@ This section provides a complete listing of all 30+ analytical SQL queries in th
 
 Customer Segmentation & Lifetime Value
 
-Customer Demographic Insights 
-[`sql_queries/customer_analysis/Customer_Demographic_Insights.sql`](./sql_queries/customer_analysis/Customer_Demographic_Insights.sql)
+Customer Demographic Insights: [Customer Demographic Insights](sql_queries/customer_analysis/Customer_Demographic_Insights.sql)
 
-Customer Lifetime Value (CLTV) Calculation
 
-Customer Churn Prediction Factors
+Customer Segmentation by Engagement (Lifespan & Recency): [Customer Segmentation by Engagement (Lifespan & Recency)](sql_queries/customer_analysis/Customer_Segmentation_by_Engagement.sql)
 
-RFM Segmentation Analysis
 
-Average Time Between Orders for Each Customer
+Customer Acquisition Over Time: [Customer Acquisition Over Time](sql_queries/customer_analysis/Customer_Acquisition_Over_Time.sql)
 
-Avg Order Value by Product Category over Customer Lifespan Quartiles
 
-Top 10 Customers by Spend per Country
+Identifying Churned Customers (Hypothetical): [Identifying Churned Customers (Hypothetical)](sql_queries/customer_analysis/Identifying_Churned_Customers.sql)
 
-Customer Acquisition Cost (CAC) by Channel (Hypothetical)
 
-Customer Cohort Analysis - First Purchase to Repeat Purchase
+Top 3 Most Frequent Buyers (by Quantity): [Top 3 Most Frequent Buyers (by Quantity)](sql_queries/customer_analysis/Most_Frequent_Buyers.sql)
 
-Customers with High Returns Rate
 
-Customer Segmentation by Product Preference
+Customer's First and Last Order Dates (Window Function & CTE): [Customer's First and Last Order Dates (Window Function & CTE)](sql_queries/customer_analysis/Customer_First_and_Last_Order_Dates.sql)
 
-Customer Loyalty Tier Migration Analysis
 
-Cross-Channel Customer Behavior (Hypothetical)
+Order Details with Previous Order Date for Same Customer (Window Function): [Order Details with Previous Order Date for Same Customer (Window Function)](sql_queries/customer_analysis/Order_Details_Previous_Order_Date.sql)
+
+
+Average Customer Order Value by Age Group (Aggregation & CTE):[Average Customer Order Value by Age Group (Aggregation & CTE)](sql_queries/customer_analysis/Avg_Customer_Order_Value_by_Age_Group.sql)
+
+
+Customer Lifetime Value (LTV) by Acquisition Month (Window Function & CTE): [Customer Lifetime Value (LTV) by Acquisition Month (Window Function & CTE)](sql_queries/customer_analysis/Customer_Lifetime_Value_by_Acquisition_Month.sql)
+
+Customers with Above-Average Order Count in Their Country (Subquery & Aggregation): [Customers with Above-Average Order Count in Their Country (Subquery & Aggregation)](sql_queries/customer_analysis/Customers_Above_Avg_Orders.sql)
+
+
+Average Time Between Orders for Each Customer (Window Function & Aggregation): [Average Time Between Orders for Each Customer (Window Function & Aggregation)](sql_queries/customer_analysis/Avg_Time_Between_Orders.sql)
+
+
+Customer Loyalty Tier Migration Analysis (Window Function & Aggregation): [Customer Loyalty Tier Migration Analysis (Window Function & Aggregation)](sql_queries/customer_analysis/Customer_Loyalty_Tier_Migration.sql)
+
+
+Comprehensive Customer Overview & Segmentation Report: [Comprehensive Customer Overview & Segmentation Report](sql_queries/customer_analysis/Customer_Report.sql)
+
+
+Customer Loyalty Segmentation by Tenure and Spend: [Customer Loyalty Segmentation by Tenure and Spend](sql_queries/customer_analysis/Customer_Loyalty_Segmentation_by_Tenure_Spend.sql)
+
+
+Average Order Value by Product Category over Customer Lifespan Quartiles (CTE & Aggregation): [Average Order Value by Product Category over Customer Lifespan Quartiles (CTE & Aggregation)](sql_queries/customer_analysis/Avg_Order_Value_Lifespan_Quartiles.sql)
 
 Product Performance & Strategy
 
-Product Co-Purchasing (Market Basket Analysis)
+Product Co-Purchasing (Market Basket Analysis): [Product Co-Purchasing (Market Basket Analysis)](sql_queries/product_analysis/Product_Co_Purchasing_Market_Basket_Analysis.sql)
 
 Product Profitability by Category
 
@@ -218,31 +234,76 @@ Products with Sales Decrease from Previous Quarter
 
 Products with Sales Spikes
 
-Identifying Top 5 Product Categories by Growth in Latest Quarter
+Identifying Top 5 Product Categories by Growth in Latest Quarter: [Identifying Top 5 Product Categories by Growth in Latest Quarter (Window Function & CTE)](sql_queries/product_analysis/Top_5_Product_Categories_Gr.sql)
+
+
+
+[Top Performing Products](sql_queries/product_analysis/Top_Performing_Products.sql)
+
+[Product Profitability Analysis](sql_queries/product_analysis/Product_Profitability_Analysis.sql)
+
+[Order Pattern Analysis](sql_queries/product_analysis/Order_Pattern_Analysis.sql)
+
+[Products Sold in More Than Average Number of Orders (Subquery)](sql_queries/product_analysis/Products_Sold_in_More_Than_Average_Orders.sql)
+
+[Top Product Subcategory per Country by Sales (Window Function & CTE)](sql_queries/product_analysis/Top_Product_Subcategory_per_Country_by_Sales.sql)
+
+[Percentage of Total Category Sales for Each Product (Window Function)](sql_queries/product_analysis/Percentage_of_Total_Category_Sales_for_Each_Product.sql)
+
+[Top 5 Best-Selling Products by Quantity in Each Category (Window Function & CTE)](sql_queries/product_analysis/Top_5_Best_Selling_Products_by_Quantity_in_Each_Category.sql)
+
+[Products with Sales Decrease from Previous Quarter (CTE, Window Function & Aggregation)](sql_queries/product_analysis/Products_Sales_Decrease_Pre.sql)
+
+
+[Products with Sales Spikes (Subquery & Aggregation)](sql_queries/product_analysis/Products_With_Sales_Spikes.sql)
+
+[Product Annual vs. Average & YoY Sales Performance](sql_queries/product_analysis/Product_Performance_Trends_Annual_vs_Average_YoY_Growth.sql)
+
+[Comprehensive Product Performance & Segmentation Report](sql_queries/product_analysis/Product_Report.sql)
+
+[Monthly Sales Trends](sql_queries/sales_reporting/Monthly_Sales_Trends.sql)
+
+[Geographic Sales Performance](sql_queries/sales_reporting/Geographic_Sales_Performance.sql)
+
+[Monthly Running Total of Sales (Window Function)](sql_queries/sales_reporting/Monthly_Running_Total_of_Sales.sql)
+
+
+[Quarter-over-Quarter Sales Comparison](sql_queries/sales_reporting/Quarter_Over_Quarter_Sales_Comparison.sql)
+
+[Sales Funnel Conversion Rates (Hypothetical Stages)](sql_queries/sales_performance/Sales_Funnel_Conversion_Rates.sql)
+
+
+[Employee Performance Ranking (Hypothetical Sales Rep Stand-in)](sql_queries/sales_performance/Employee_Performance_Rankin.sql)
+
+
+[Top Customer per Country by Sales (Window Function & CTE)](sql_queries/customer_analysis/Top_Customer_per_Country_by_Sales.sql)
+
+
 
 Sales Trend & Forecasting
 
-Cumulative Sales by Product Category Over Time
+Cumulative Sales by Product Category Over Time: [Cumulative Sales by Product Category Over Time (Window Function)](sql_queries/sales_reporting/Cumulative_Sales_By_Category.sql)
 
 Monthly Sales Growth Rate
 
-Average Sales Cycle Length
+Average Sales Cycle Length: [Average Sales Cycle Length](sql_queries/sales_performance/Average_Sales_Cycle_Length.sql)
 
-Sales Performance by Weekday/Time of Day
+Sales Performance by Weekday/Time of Day: [Sales Performance by Weekday/Time of Day](sql_queries/sales_reporting/Sales_Performance_by_Weekday_Time_of_Day.sql)
 
 Employee Performance Ranking
 
-Quarter-over-Quarter Sales Comparison
+Quarter-over-Quarter Sales Comparison: [Quarter-over-Quarter Sales Growth for Products (Window Function & Aggregation)](sql_queries/sales_reporting/Quarter_Over_Quarter_Sales_Growth_for_Products.sql)
 
 Sales Funnel Conversion Rates (Hypothetical Stages)
 
 Geographic & Demographic Analysis
 
-Customers with Above-Average Order Count in Their Country
+Customers with Above-Average Order Count in Their Country: [Customers with Above-Average Order Count in Their Country](sql_queries/customer_analysis/Customers_Above_Avg_Orders.sql)
 
-Top 5 Countries by Total Sales
+Top 5 Countries by Total Sales: [Top 5 Countries by Total Sales](sql_queries/sales_reporting/Top_5_Countries_by_Total_Sales.sql)
 
-Customer Demographics by Product Category Preference
+Customer Demographics by Product Category Preference : [Customer Demographics by Product Category Preference](sql_queries/customer_analysis/Customer_Demographics_by_Product_Category_Preference.sql)
+
 
 How To Use
 To explore these SQL solutions:

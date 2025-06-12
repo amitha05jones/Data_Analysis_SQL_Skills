@@ -291,21 +291,25 @@ This section provides a complete listing of all 30+ analytical SQL queries in th
 
 ### How To Use
 
-To explore these SQL solutions:
+To explore these SQL solutions and run the queries:
 
-Clone the Repository:
+1.  **Clone the Repository:**
+    ```bash
+    git clone [https://github.com/amitha05jones/Data_Analysis_SQL_Skills.git](https://github.com/amitha05jones/Data_Analysis_SQL_Skills.git)
+    ```
+ 
 
-git clone https://github.com/amitha05jones/Data_Analysis_SQL_Skills.git
+2.  **Set Up Your Database Environment:**
+    * **Install a Relational Database:** You'll need a relational database management system (RDBMS) like MySQL, PostgreSQL, or SQL Server installed locally.
+    * **Prepare Data Files:** Ensure you have the `gold_dim_customers.csv`, `gold_dim_products.csv`, and `gold_fact_sales.csv` files placed in a `data/` folder at the root of your cloned repository. (You would need to create these CSVs based on your schema and populate them with sample data).
+    * **Execute Setup Script:**
+        * Navigate to the `sql_setup/` (or `database_setup/`) directory within this repository.
+        * Open the `create_and_load_db.sql` script (or whatever you name it) in your MySQL client (e.g., MySQL Workbench).
+        * **Important:** Before running `LOAD DATA LOCAL INFILE`, you might need to enable `LOCAL INFILE` capability in your MySQL client/server. This is typically done by running `SET GLOBAL local_infile=1;` in your MySQL session.
+        * Execute the `create_and_load_db.sql` script. This will create the database, define the tables, and load the sample data from the CSV files.
 
-Navigate to the sql_queries Directory: The .sql files are organized within subfolders based on their analytical domain: customer_analysis, product_analysis, sales_performance, and sales_reporting. You will need to ensure your local repository has these subfolders and that the corresponding .sql files are placed correctly within them, matching the filenames referenced in this README.md.
+3.  **Execute Queries:**
+    * Navigate to the `sql_queries/` directory within this repository. The `.sql` files are organized into subfolders (`customer_analysis`, `product_analysis`, `sales_performance`, `sales_reporting`).
+    * Open your preferred SQL client and connect to your `DataWarehouseAnalytics` database.
+    * You can now open any `.sql` file and execute the queries against your loaded sample data.
 
-Execute Queries: These queries are written in standard SQL and should be compatible with most relational database management systems (like MySQL, PostgreSQL, SQL Server) that support the specified functions. You can execute them in your preferred SQL client after setting up the database schema.
-
-Technologies Used
-SQL (Standard SQL): Core language for data extraction and analysis.
-
-Git: Version control system for tracking changes.
-
-GitHub: Cloud-based platform for hosting the project repository.
-
-This project is a testament to applying analytical rigor and SQL proficiency to real-world business challenges, making data actionable for strategic decision-making.

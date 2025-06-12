@@ -298,13 +298,14 @@ To explore these SQL solutions and run the queries:
     git clone [https://github.com/amitha05jones/Data_Analysis_SQL_Skills.git](https://github.com/amitha05jones/Data_Analysis_SQL_Skills.git)
     ```
  
-
 2.  **Set Up Your Database Environment:**
     * **Install a Relational Database:** You'll need a relational database management system (RDBMS) like MySQL, PostgreSQL, or SQL Server installed locally.
-    * **Prepare Data Files:** Ensure you have the `gold_dim_customers.csv`, `gold_dim_products.csv`, and `gold_fact_sales.csv` files placed in a `data/` folder at the root of your cloned repository. (You would need to create these CSVs based on your schema and populate them with sample data).
+    * **Prepare Data Files:** Ensure you have the `gold_dim_customers.csv`, `gold_dim_products.csv`, and `gold_fact_sales.csv` files. You will need to create these CSVs based on your schema and populate them with sample data (e.g., in a `data/` folder at the root of your cloned repository).
     * **Execute Setup Script:**
-        * Navigate to the `sql_setup/` (or `database_setup/`) directory within this repository.
-        * Open the `create_and_load_db.sql` script (or whatever you name it) in your MySQL client (e.g., MySQL Workbench).
+        * Navigate to the  `database_setup/` directory within this repository.
+        * Open the `create_and_load_db.sql` script in your MySQL client (e.g., MySQL Workbench).
+        * Open the `create_and_load_db.sql` script in your MySQL client (e.g., MySQL Workbench).
+        * **Note on Paths:** The `LOAD DATA LOCAL INFILE` commands within this script assume the CSV files are located in a `data/` folder one level up from the `database_setup/` directory. If you place your `data/` folder elsewhere, you may need to adjust the file paths within the `.sql` script accordingly (e.g., using absolute paths or paths relative to your MySQL client's working directory).
         * **Important:** Before running `LOAD DATA LOCAL INFILE`, you might need to enable `LOCAL INFILE` capability in your MySQL client/server. This is typically done by running `SET GLOBAL local_infile=1;` in your MySQL session.
         * Execute the `create_and_load_db.sql` script. This will create the database, define the tables, and load the sample data from the CSV files.
 
@@ -313,3 +314,4 @@ To explore these SQL solutions and run the queries:
     * Open your preferred SQL client and connect to your `DataWarehouseAnalytics` database.
     * You can now open any `.sql` file and execute the queries against your loaded sample data.
 
+---
